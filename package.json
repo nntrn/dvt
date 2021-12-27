@@ -1,0 +1,23 @@
+{
+  "name": "dvt",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "dvt": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "devtools",
+    "dom",
+    "cli",
+    "terminal",
+    "console"
+  ],
+  "author": "annie tran (https://github.com/nntrn)",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^19.0.0"
+  }
+}
