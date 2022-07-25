@@ -1,11 +1,12 @@
 {
   "name": "dvt",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "cli tool for inspecting and manipulating DOM",
   "repository": "nntrn/dvt",
   "bin": {
     "dvt": "bin/dvt.js"
   },
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
