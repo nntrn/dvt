@@ -8,16 +8,12 @@ class DevTools {
     this.__htmlString__ = function () {
       return htmlString
     }
-    this.dom = new JSDOM(htmlString)
+    this.dom = new JSDOM(`<wrapper id="dvt">${htmlString}</wrapper>`)
     this.index = 0
   }
 
   get html() {
     return this.__htmlString__()
-  }
-
-  get outerHTML() {
-    return this.dom.window.document.documentElement.outerHTML
   }
 
   getDom() {
@@ -28,17 +24,13 @@ class DevTools {
     return this.getDom().window.document
   }
 
-  // getOuterHtml() {
-  //   return this.getDom().window.document.documentElement.outerHTML
-  // }
-
-  run(raw) {
+  execute(raw) {
     const document = this.getDocument()
 
     const code = raw
       .replace(/this\./g, 'document.')
-      .replace(/\$\$\(["']([^\)]+)["']\)/g, 'Array.from(document.querySelectorAll(\'$1\'))')
-      .replace(/\$\(["']([^\)]+)["']\)/g, 'document.querySelector(\'$1\')')
+      .replace(/\$\$\(["']([^\)]+)["']\)/g, "Array.from(document.querySelectorAll('$1'))")
+      .replace(/\$\(["']([^\)]+)["']\)/g, "document.querySelector('$1')")
 
     if('.' === code) {
       return document
@@ -76,7 +68,7 @@ class DevTools {
       return fn(document)
     }
 
-    return fn || ''
+    return fn || document.documentElement.querySelector('wrapper#dvt').innerHTML
   }
 }
 
