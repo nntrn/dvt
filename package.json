@@ -1,7 +1,7 @@
 {
   "name": "dvt",
-  "version": "1.4.0",
-  "description": "cli tool for inspecting and manipulating DOM",
+  "version": "2.0.0",
+  "description": "web console for your terminal",
   "repository": "nntrn/dvt",
   "bin": {
     "dvt": "bin/dvt.js"

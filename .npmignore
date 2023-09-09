@@ -1,3 +1,4 @@
 .vscode
 .eslintrc.js
 test*
+assets

@@ -4,7 +4,6 @@ const DevTools = require('../')
 
 const args = process.argv.slice(2)
 
-// copied from eslint
 function readStdin() {
   return new Promise((resolve, reject) => {
     let content = ''
@@ -30,6 +29,6 @@ void async function main() {
   let dom = new DevTools(htmlCode.replace(/@import/g, '&40;import'))
 
   for(let i of args) {
-    print(dom.run(i))
+    print(dom.execute(i))
   }
 }()
